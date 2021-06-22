@@ -18,13 +18,16 @@
             <ul class="nav navbar-nav">
                 <?php
                     $query = "SELECT * FROM categories";
+                    global $connection;
                     $select_all_categories = mysqli_query($connection,$query);
                     while($row = mysqli_fetch_assoc($select_all_categories)){
                        $cat_title = $row['cat_title'];
                         echo "<li><a href='#'>{$cat_title}</a></li>";
                     }
                 ?>
-
+                <li>
+                    <a href="admin">Admin</a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
